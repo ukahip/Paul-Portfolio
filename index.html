@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Cloud & Cybersecurity</title>
+  <title>Ukah Paul Ikechukwu — Cloud & Security Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #080b0f;
-      --surface: #0e1318;
-      --border: #1a2230;
-      --teal: #00e5cc;
-      --amber: #ffb830;
-      --red: #ff4757;
-      --text: #c8d6e5;
-      --muted: #4a5568;
-      --white: #f0f6ff;
+      --bg: #080b0f; --surface: #0e1318; --border: #1a2230;
+      --teal: #00e5cc; --amber: #ffb830; --red: #ff4757;
+      --text: #c8d6e5; --muted: #4a5568; --white: #f0f6ff;
       --font-display: 'Bebas Neue', sans-serif;
       --font-body: 'Syne', sans-serif;
       --font-mono: 'DM Mono', monospace;
@@ -28,98 +22,77 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
-
-    .grid-bg {
-      position: fixed; inset: 0;
-      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none; opacity: 0.3;
-    }
-
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 3rem;
-      border-bottom: 1px solid var(--border);
-      background: rgba(8, 11, 15, 0.88); backdrop-filter: blur(12px);
-    }
+    .grid-bg { position: fixed; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; opacity: 0.3; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; border-bottom: 1px solid var(--border); background: rgba(8,11,15,0.88); backdrop-filter: blur(12px); }
     .nav-logo { font-family: var(--font-mono); font-size: 0.85rem; color: var(--teal); letter-spacing: 0.1em; }
     .nav-logo span { color: var(--muted); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--teal); }
-
     section { position: relative; z-index: 1; }
-
     #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 3rem 4rem; max-width: 1100px; margin: 0 auto; }
     .hero-tag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .hero-tag::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--teal); }
-    h1.hero-name { font-family: var(--font-display); font-size: clamp(5rem, 13vw, 12rem); line-height: 0.9; color: var(--white); letter-spacing: 0.02em; }
+    h1.hero-name { font-family: var(--font-display); font-size: clamp(4rem, 11vw, 10rem); line-height: 0.9; color: var(--white); }
     h1.hero-name .accent { color: var(--teal); }
-    .hero-subtitle { font-size: 1.05rem; color: var(--muted); margin-top: 2rem; max-width: 520px; line-height: 1.8; }
+    .hero-subtitle { font-size: 1.05rem; color: var(--muted); margin-top: 2rem; max-width: 560px; line-height: 1.8; }
     .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem; }
     .badge { font-family: var(--font-mono); font-size: 0.7rem; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); letter-spacing: 0.1em; background: var(--surface); }
     .badge.active { border-color: var(--teal); color: var(--teal); }
     .hero-cta { display: flex; gap: 1rem; margin-top: 3.5rem; flex-wrap: wrap; }
-    .btn { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.85rem 2rem; text-decoration: none; border: 1px solid; transition: all 0.25s; cursor: pointer; background: transparent; }
+    .btn { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.85rem 2rem; text-decoration: none; border: 1px solid; transition: all 0.25s; cursor: pointer; background: transparent; display: inline-block; }
     .btn-primary { border-color: var(--teal); color: var(--teal); }
     .btn-primary:hover { background: var(--teal); color: var(--bg); }
     .btn-ghost { border-color: var(--border); color: var(--muted); }
     .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
     .cursor { display: inline-block; width: 3px; height: 0.85em; background: var(--teal); margin-left: 4px; vertical-align: middle; animation: blink 1s step-end infinite; }
     @keyframes blink { 50% { opacity: 0; } }
-
     .stat-row { display: flex; gap: 4rem; padding: 2rem 3rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; flex-wrap: wrap; }
     .stat { display: flex; flex-direction: column; gap: 0.2rem; }
     .stat-value { font-family: var(--font-display); font-size: 2.8rem; color: var(--white); line-height: 1; }
     .stat-value span { color: var(--teal); }
     .stat-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
-
     .section-inner { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; }
     .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3.5rem; flex-wrap: wrap; }
     .section-num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal); letter-spacing: 0.1em; }
     .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); letter-spacing: 0.03em; }
     .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 1rem; min-width: 40px; }
-
     .filter-row { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-    .filter-btn { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.45rem 1.1rem; border: 1px solid var(--border); background: transparent; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; border-radius: 1px; }
+    .filter-btn { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.45rem 1.1rem; border: 1px solid var(--border); background: transparent; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
     .filter-btn:hover, .filter-btn.active { border-color: var(--teal); color: var(--teal); }
-
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
     .project-card { background: var(--bg); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s; position: relative; overflow: hidden; }
     .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--teal); transition: height 0.3s; }
     .project-card:hover { background: var(--surface); }
     .project-card:hover::before { height: 100%; }
+    .project-card.featured { background: var(--surface); }
+    .project-card.featured::before { height: 60px; }
     .project-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
     .project-icon { width: 36px; height: 36px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
     .project-tag { font-family: var(--font-mono); font-size: 0.62rem; padding: 0.2rem 0.5rem; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.08em; }
     .project-tag.cloud { border-color: #1a4a6b; color: #4db8ff; }
     .project-tag.cyber { border-color: #3d1a1a; color: #ff6b6b; }
-    .project-name { font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--white); }
+    .featured-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--teal); letter-spacing: 0.12em; }
+    .project-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
     .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; flex: 1; }
     .project-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); }
     .project-lang { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
-    .lang-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+    .lang-dot { width: 8px; height: 8px; border-radius: 50%; }
     .project-links { display: flex; gap: 1rem; align-items: center; }
-    .project-link { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+    .project-link { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .project-link:hover { color: var(--teal); }
     .project-stars { font-family: var(--font-mono); font-size: 0.7rem; color: var(--amber); }
-    .load-state { grid-column: 1 / -1; padding: 3rem; text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+    .load-state { grid-column: 1/-1; padding: 3rem; text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
     .load-state.error { color: var(--red); }
-
     #docs { background: var(--surface); }
     .docs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
     .doc-card { border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s, background 0.2s; text-decoration: none; }
-    .doc-card:hover { border-color: var(--amber); background: rgba(255, 184, 48, 0.03); }
+    .doc-card:hover { border-color: var(--amber); background: rgba(255,184,48,0.03); }
     .doc-emoji { font-size: 1.5rem; }
     .doc-title { font-size: 0.95rem; font-weight: 700; color: var(--white); line-height: 1.4; }
-    .doc-meta { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; }
+    .doc-date { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); opacity: 0.6; }
     .doc-arrow { margin-top: auto; font-family: var(--font-mono); font-size: 0.75rem; color: var(--amber); }
-
-    .notion-config-banner { background: rgba(255, 184, 48, 0.05); border: 1px solid rgba(255, 184, 48, 0.2); padding: 1.5rem 2rem; border-radius: 2px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--amber); line-height: 1.8; margin-bottom: 2rem; }
-    .notion-config-banner code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.4rem; border-radius: 2px; }
-
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .about-text p { font-size: 1rem; color: var(--text); line-height: 1.9; margin-bottom: 1.2rem; }
     .about-text p strong { color: var(--white); }
@@ -128,8 +101,7 @@
     .skill-name { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; }
     .skill-name span { color: var(--teal); }
     .skill-bar { height: 2px; background: var(--border); position: relative; overflow: hidden; }
-    .skill-fill { position: absolute; top: 0; left: 0; height: 100%; background: linear-gradient(90deg, var(--teal), var(--amber)); width: 0; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
-
+    .skill-fill { position: absolute; top: 0; left: 0; height: 100%; background: linear-gradient(90deg, var(--teal), var(--amber)); width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
     #contact { border-top: 1px solid var(--border); }
     .contact-inner { max-width: 1100px; margin: 0 auto; padding: 6rem 3rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 3rem; }
     .contact-left h2 { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 6rem); color: var(--white); line-height: 0.95; }
@@ -138,36 +110,25 @@
     .social-links { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
     .social-link { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; display: flex; align-items: center; gap: 0.6rem; transition: color 0.2s; }
     .social-link:hover { color: var(--teal); }
-    .social-link::after { content: '→'; font-size: 0.9rem; }
-
+    .social-link::after { content: '→'; }
     footer { border-top: 1px solid var(--border); padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
     footer span { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
-
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
-
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      #hero { padding: 7rem 1.5rem 3rem; }
-      .section-inner { padding: 4rem 1.5rem; }
-      .stat-row { padding: 2rem 1.5rem; gap: 2rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .contact-inner { padding: 4rem 1.5rem; }
-      .social-links { align-items: flex-start; }
+      nav { padding: 1rem 1.5rem; } .nav-links { gap: 1.5rem; }
+      #hero { padding: 7rem 1.5rem 3rem; } .section-inner { padding: 4rem 1.5rem; }
+      .stat-row { padding: 2rem 1.5rem; gap: 2rem; } .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-inner { padding: 4rem 1.5rem; } .social-links { align-items: flex-start; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
     }
-    @media (max-width: 480px) {
-      .nav-links { display: none; }
-      h1.hero-name { font-size: 4.5rem; }
-    }
+    @media (max-width: 480px) { .nav-links { display: none; } h1.hero-name { font-size: 3.8rem; } }
   </style>
 </head>
 <body>
   <div class="grid-bg"></div>
-
   <nav>
-    <div class="nav-logo"><span>~/</span>portfolio</div>
+    <div class="nav-logo"><span>~/</span>ukahip</div>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#docs">Docs</a></li>
@@ -178,17 +139,17 @@
 
   <section id="hero">
     <div class="hero-tag">Cloud · Security · Infrastructure</div>
-    <h1 class="hero-name">YOUR<br /><span class="accent">NAME</span></h1>
+    <h1 class="hero-name">UKAH<br /><span class="accent">PAUL</span></h1>
     <p class="hero-subtitle">
-      Cloud &amp; Cybersecurity Engineer building secure infrastructure on AWS.
-      I architect systems that are resilient, observable, and hard to compromise.
+      Cloud &amp; Security Engineer specialising in AWS infrastructure and secure system design.
+      Currently completing my Diploma at AltSchool Africa — building things that are fast, resilient, and hard to break.
       <span class="cursor"></span>
     </p>
     <div class="hero-badges">
-      <span class="badge active">AWS Solutions</span>
-      <span class="badge active">Security Engineering</span>
-      <span class="badge">IT Service Management</span>
-      <span class="badge">Cloud Architecture</span>
+      <span class="badge active">AWS Cloud</span>
+      <span class="badge active">Cloud Security</span>
+      <span class="badge">AltSchool Africa</span>
+      <span class="badge">Serverless</span>
       <span class="badge">Zero Trust</span>
     </div>
     <div class="hero-cta">
@@ -198,30 +159,16 @@
   </section>
 
   <div class="stat-row reveal">
-    <div class="stat">
-      <div class="stat-value" id="repo-count">—<span>+</span></div>
-      <div class="stat-label">GitHub Repos</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">3<span>+</span></div>
-      <div class="stat-label">AWS Services Used</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">2<span>+</span></div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">100<span>%</span></div>
-      <div class="stat-label">Passion for Security</div>
-    </div>
+    <div class="stat"><div class="stat-value" id="repo-count">—<span>+</span></div><div class="stat-label">GitHub Repos</div></div>
+    <div class="stat"><div class="stat-value">5<span>+</span></div><div class="stat-label">AWS Services</div></div>
+    <div class="stat"><div class="stat-value">1<span>+</span></div><div class="stat-label">Years Specialising</div></div>
+    <div class="stat"><div class="stat-value" id="docs-count">—</div><div class="stat-label">Notion Docs</div></div>
   </div>
 
   <section id="projects">
     <div class="section-inner">
       <div class="section-header reveal">
-        <span class="section-num">01</span>
-        <h2 class="section-title">Projects</h2>
-        <div class="section-line"></div>
+        <span class="section-num">01</span><h2 class="section-title">Projects</h2><div class="section-line"></div>
       </div>
       <div class="filter-row reveal">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -230,9 +177,7 @@
         <button class="filter-btn" data-filter="other">Other</button>
       </div>
       <div class="projects-grid" id="projects-grid">
-        <div class="load-state" id="projects-loader">
-          Fetching repos from GitHub<span class="cursor"></span>
-        </div>
+        <div class="load-state">Fetching repos from GitHub<span class="cursor"></span></div>
       </div>
     </div>
   </section>
@@ -240,60 +185,36 @@
   <section id="docs">
     <div class="section-inner">
       <div class="section-header reveal">
-        <span class="section-num">02</span>
-        <h2 class="section-title">Documentation</h2>
-        <div class="section-line"></div>
+        <span class="section-num">02</span><h2 class="section-title">Documentation</h2><div class="section-line"></div>
       </div>
-      <div class="notion-config-banner">
-        ⚠ <strong>Notion Integration Note</strong> — Due to browser CORS restrictions, Notion's API must be called server-side.
-        Use the <code>sync.js</code> script (already built) to export docs to <code>/docs</code>, then update <code>NOTION_DOCS</code> in the CONFIG block below with your pages.
-        Alternatively, add a Vercel API route at <code>/api/notion</code> as a proxy. The cards below are manually configured — replace them with your own.
+      <div class="docs-grid" id="docs-grid">
+        <div class="load-state" style="grid-column:1/-1;">Loading Notion docs<span class="cursor"></span></div>
       </div>
-      <div class="docs-grid" id="docs-grid"></div>
     </div>
   </section>
 
   <section id="about">
     <div class="section-inner">
       <div class="section-header reveal">
-        <span class="section-num">03</span>
-        <h2 class="section-title">About</h2>
-        <div class="section-line"></div>
+        <span class="section-num">03</span><h2 class="section-title">About</h2><div class="section-line"></div>
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>I'm a <strong>Cloud &amp; Cybersecurity Engineer</strong> based in Lagos, Nigeria, with a background in IT Service Management and a deep focus on building secure, scalable systems on AWS.</p>
-          <p>My work spans secure file vaults, cloud-native architectures, cybersecurity education tools, and ITSM process improvement. I care deeply about <strong>defence in depth</strong> — designing systems where each layer independently resists attack.</p>
-          <p>When I'm not debugging Lambda cold starts or writing Terraform, I'm exploring new attack surfaces or producing documentation that future-me will genuinely appreciate.</p>
+          <p>I'm <strong>Ukah Paul Ikechukwu</strong>, a Cloud &amp; Security Engineer based in Lagos, Nigeria. I'm currently completing my Diploma in Cloud Engineering at <strong>AltSchool Africa</strong>, where I've specialised in cloud security and infrastructure design on AWS.</p>
+          <p>During my internship under <strong>Victor Akinode</strong>, I deepened my expertise in securing cloud workloads, implementing zero-trust principles, and building resilient AWS-backed systems. That experience shaped how I think about infrastructure — security isn't a feature, it's a foundation.</p>
+          <p>As my capstone project, I built <strong>FoxShare</strong> — a secure file vault powered by AWS S3, KMS, Lambda, API Gateway, and Cognito MFA. It represents everything I've learned about building systems that are both functional and genuinely secure.</p>
           <div class="hero-cta" style="margin-top:2rem;">
-            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+            <a href="https://github.com/ukahip/FOX-SHARE-V2" target="_blank" class="btn btn-primary">View FoxShare ↗</a>
+            <a href="#contact" class="btn btn-ghost">Let's Connect</a>
           </div>
         </div>
         <div class="skills-list reveal">
-          <div class="skill-item">
-            <div class="skill-name">AWS Architecture <span>90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Security Engineering <span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">IT Service Management <span>92%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Web Development <span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Cloud Networking <span>78%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Incident Response <span>88%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-          </div>
+          <div class="skill-item"><div class="skill-name">AWS Architecture <span>88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+          <div class="skill-item"><div class="skill-name">Cloud Security <span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+          <div class="skill-item"><div class="skill-name">Serverless / Lambda <span>82%</span></div><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+          <div class="skill-item"><div class="skill-name">IAM & Access Control <span>86%</span></div><div class="skill-bar"><div class="skill-fill" data-width="86"></div></div></div>
+          <div class="skill-item"><div class="skill-name">Web Development <span>78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
+          <div class="skill-item"><div class="skill-name">IT Service Management <span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
         </div>
       </div>
     </div>
@@ -303,102 +224,70 @@
     <div class="contact-inner">
       <div class="contact-left reveal">
         <h2>Let's<br /><span>Build.</span></h2>
-        <p>Open to collaborations, contract work, and conversations about cloud security.</p>
+        <p>Open to collaborations, internships, contract work, and conversations about cloud security.</p>
         <div class="hero-cta" style="margin-top:2rem;">
-          <a href="mailto:your@email.com" class="btn btn-primary">Send an Email</a>
+          <a href="mailto:ukahip@gmail.com" class="btn btn-primary">Send an Email</a>
         </div>
       </div>
       <div class="social-links reveal">
-        <a href="https://github.com/YOUR_GITHUB" target="_blank" class="social-link">GitHub</a>
-        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="social-link">LinkedIn</a>
-        <a href="https://twitter.com/YOUR_TWITTER" target="_blank" class="social-link">Twitter / X</a>
+        <a href="https://github.com/ukahip" target="_blank" class="social-link">GitHub</a>
+        <a href="https://linkedin.com/in/Paul" target="_blank" class="social-link">LinkedIn</a>
+        <a href="https://twitter.com/paulblink" target="_blank" class="social-link">Twitter / X</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <span>© 2025 Your Name</span>
+    <span>© 2025 Ukah Paul Ikechukwu</span>
     <span>Lagos, Nigeria · Cloud &amp; Security</span>
-    <span>Built with HTML · Hosted on GitHub Pages</span>
+    <span>AltSchool Africa · Diploma Graduate</span>
   </footer>
 
   <script>
-    // ═══════════════════════════════════════════════
-    // 🔧 CONFIGURATION — Edit these values
-    // ═══════════════════════════════════════════════
-    const CONFIG = {
-      // Your GitHub username
-      GITHUB_USERNAME: "YOUR_GITHUB_USERNAME",
-
-      // Map exact repo names → category: 'cloud', 'cyber', or 'other'
-      REPO_CATEGORIES: {
-        "foxshare":         "cloud",
-        "aws-cognito-mfa":  "cloud",
-        "s3-file-vault":    "cloud",
-        "cyberguard-bot":   "cyber",
-        "pptx-chatbot":     "cyber",
-      },
-
-      // Notion docs — manually add your exported/synced Notion pages here
-      NOTION_DOCS: [
-        { emoji: "☁️", title: "FoxShare — AWS Architecture Guide",       meta: "S3 · KMS · Lambda · API Gateway · Cognito",   url: "https://notion.so/YOUR_PAGE" },
-        { emoji: "🔐", title: "Cognito MFA Implementation Notes",        meta: "Authentication · Challenge Flow · Tokens",     url: "https://notion.so/YOUR_PAGE" },
-        { emoji: "📡", title: "CORS Configuration Across AWS Services",  meta: "S3 · API Gateway · Lambda",                   url: "https://notion.so/YOUR_PAGE" },
-        { emoji: "🛡️", title: "Cybersecurity Teaching Chatbot Design",   meta: "Flask · OpenAI · Session Management",          url: "https://notion.so/YOUR_PAGE" },
-        { emoji: "📋", title: "ITSM Process Improvement Playbook",       meta: "SLA · OLA · ISO 20000 · CAB",                 url: "https://notion.so/YOUR_PAGE" },
-        { emoji: "🏗️", title: "Vercel Deployment & Proxy Setup",         meta: "Frontend · Serverless · API Routes",          url: "https://notion.so/YOUR_PAGE" },
-      ],
-    };
-
-    // ═══════════════════════════════════════════════
-    // GitHub Integration
-    // ═══════════════════════════════════════════════
-    const LANG_COLORS = {
-      JavaScript: "#f1e05a", TypeScript: "#2b7489", Python: "#3572A5",
-      HTML: "#e34c26", CSS: "#563d7c", Shell: "#89e051", Go: "#00ADD8",
+    const REPO_CATEGORIES = {
+      "FOX-SHARE-V2": "cloud", "foxshare": "cloud", "AWS-Labs": "cloud",
+      "My_Sophos_Project": "cyber", "wazuh": "cyber",
     };
     const ICONS = { cloud: "☁️", cyber: "🛡️", other: "📁" };
+    const LANG_COLORS = { JavaScript:"#f1e05a", TypeScript:"#2b7489", Python:"#3572A5", HTML:"#e34c26", CSS:"#563d7c", Shell:"#89e051", Go:"#00ADD8" };
     let allCards = [];
 
     async function loadGitHubRepos() {
       const grid = document.getElementById("projects-grid");
-      if (!CONFIG.GITHUB_USERNAME || CONFIG.GITHUB_USERNAME === "YOUR_GITHUB_USERNAME") {
-        grid.innerHTML = `<div class="load-state error">⚠ Set GITHUB_USERNAME in the CONFIG block to load your repos.</div>`;
-        return;
-      }
       try {
-        const res = await fetch(`https://api.github.com/users/${CONFIG.GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
+        const res = await fetch("https://api.github.com/users/ukahip/repos?per_page=100&sort=updated");
         if (!res.ok) throw new Error(`GitHub API ${res.status}`);
         const repos = await res.json();
-
-        const counter = document.getElementById("repo-count");
-        if (counter) counter.innerHTML = `${repos.length}<span>+</span>`;
-
-        const sorted = repos.filter(r => !r.fork).sort((a, b) => b.stargazers_count - a.stargazers_count);
+        const el = document.getElementById("repo-count");
+        if (el) el.innerHTML = `${repos.length}<span>+</span>`;
+        const sorted = repos.filter(r => !r.fork).sort((a, b) => {
+          if (a.name === "FOX-SHARE-V2") return -1;
+          if (b.name === "FOX-SHARE-V2") return 1;
+          return b.stargazers_count - a.stargazers_count;
+        });
         grid.innerHTML = "";
-
         sorted.forEach(repo => {
-          const cat = CONFIG.REPO_CATEGORIES[repo.name] || "other";
-          const card = buildCard(repo, cat);
+          const cat = REPO_CATEGORIES[repo.name] || "other";
+          const card = buildCard(repo, cat, repo.name === "FOX-SHARE-V2");
           card.dataset.category = cat;
           allCards.push(card);
           grid.appendChild(card);
         });
-
         if (!sorted.length) grid.innerHTML = `<div class="load-state">No public repositories found.</div>`;
       } catch (err) {
         grid.innerHTML = `<div class="load-state error">Failed to load repos: ${err.message}</div>`;
       }
     }
 
-    function buildCard(repo, cat) {
+    function buildCard(repo, cat, featured) {
       const card = document.createElement("div");
-      card.className = "project-card reveal";
+      card.className = "project-card reveal" + (featured ? " featured" : "");
       const lc = LANG_COLORS[repo.language] || "#4a5568";
       card.innerHTML = `
         <div class="project-card-top">
           <div class="project-icon">${ICONS[cat]}</div>
           <div class="project-tags">
+            ${featured ? `<span class="featured-label">★ Capstone</span>` : ""}
             ${cat !== "other" ? `<span class="project-tag ${cat}">${cat === "cloud" ? "AWS" : "Cyber"}</span>` : ""}
             ${repo.language ? `<span class="project-tag">${repo.language}</span>` : ""}
           </div>
@@ -406,9 +295,7 @@
         <div class="project-name">${repo.name}</div>
         <div class="project-desc">${repo.description || "No description provided."}</div>
         <div class="project-footer">
-          <div class="project-lang">
-            ${repo.language ? `<span class="lang-dot" style="background:${lc}"></span>${repo.language}` : "—"}
-          </div>
+          <div class="project-lang">${repo.language ? `<span class="lang-dot" style="background:${lc}"></span>${repo.language}` : "—"}</div>
           <div class="project-links">
             ${repo.stargazers_count > 0 ? `<span class="project-stars">★ ${repo.stargazers_count}</span>` : ""}
             ${repo.homepage ? `<a href="${repo.homepage}" class="project-link" target="_blank">Live ↗</a>` : ""}
@@ -427,27 +314,42 @@
       });
     });
 
-    // ═══════════════════════════════════════════════
-    // Notion Docs
-    // ═══════════════════════════════════════════════
-    function loadDocs() {
+    async function loadNotionDocs() {
       const grid = document.getElementById("docs-grid");
-      CONFIG.NOTION_DOCS.forEach(doc => {
-        const a = document.createElement("a");
-        a.className = "doc-card reveal";
-        a.href = doc.url; a.target = "_blank";
-        a.innerHTML = `
-          <div class="doc-emoji">${doc.emoji}</div>
-          <div class="doc-title">${doc.title}</div>
-          <div class="doc-meta">${doc.meta}</div>
-          <div class="doc-arrow">Read →</div>`;
-        grid.appendChild(a);
-      });
+      try {
+        const res = await fetch("/api/notion");
+        if (!res.ok) throw new Error(`API error ${res.status}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+        const pages = data.pages || [];
+        const el = document.getElementById("docs-count");
+        if (el) el.textContent = pages.length;
+        grid.innerHTML = "";
+        if (!pages.length) {
+          grid.innerHTML = `<div class="load-state" style="grid-column:1/-1;">No Notion pages found. Connect pages to your integration.</div>`;
+          return;
+        }
+        pages.forEach(page => {
+          const a = document.createElement("a");
+          a.className = "doc-card reveal";
+          a.href = page.url; a.target = "_blank";
+          const date = page.lastEdited ? new Date(page.lastEdited).toLocaleDateString("en-GB", { day:"numeric", month:"short", year:"numeric" }) : "";
+          a.innerHTML = `
+            <div class="doc-emoji">${page.icon || "📄"}</div>
+            <div class="doc-title">${page.title}</div>
+            ${date ? `<div class="doc-date">Last edited ${date}</div>` : ""}
+            <div class="doc-arrow">Read in Notion →</div>`;
+          grid.appendChild(a);
+        });
+        observeAll();
+      } catch (err) {
+        grid.innerHTML = `<div class="load-state error" style="grid-column:1/-1;">
+          Could not load Notion docs: ${err.message}<br/>
+          <small>Make sure NOTION_TOKEN and NOTION_PAGE_ID are set in Vercel environment variables.</small>
+        </div>`;
+      }
     }
 
-    // ═══════════════════════════════════════════════
-    // Scroll Reveal + Skill Bars
-    // ═══════════════════════════════════════════════
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -457,13 +359,11 @@
       });
     }, { threshold: 0.1 });
 
-    function observeAll() {
-      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-    }
+    function observeAll() { document.querySelectorAll(".reveal").forEach(el => observer.observe(el)); }
 
     document.addEventListener("DOMContentLoaded", () => {
-      loadDocs();
       loadGitHubRepos().then(observeAll);
+      loadNotionDocs();
       observeAll();
     });
   </script>
